@@ -80,7 +80,20 @@
     <string name="editor_delete_book_failed">Error with deleting book</string>
     <!-- Toast message in editor when current book was successfully deleted -->
     <string name="editor_delete_book_successful">Book deleted</string>
+
+<!-- Quantity Buttons -->
     <string name="add_button">+</string>
     <string name="subtract_button">-</string>
+<!-- Quantity Buttons -->
+
+<!-- Required Fields Toast Message -->
+    <string name="requires_title">Book requires a title!</string>
+    <string name="requires_author">Book requires an author!</string>
+    <string name="requires_price">Book requires a price!</string>
+    <string name="requires_quantity">Books requires a quantity!</string>
+    <string name="requires_phone_number">Books requires a supplier\'s phone number!</string>
+<!-- Required Fields Toast Message -->
+
+    <string name="call_supplier">Call Supplier</string>
 
 </resources>

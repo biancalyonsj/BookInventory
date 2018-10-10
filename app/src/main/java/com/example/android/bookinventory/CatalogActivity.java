@@ -94,8 +94,7 @@ public class CatalogActivity extends AppCompatActivity implements
         values.put(BookEntry.COLUMN_BOOK_PRICE, 12.50);
         values.put(BookEntry.COLUMN_BOOK_QUANTITY, 7);
         values.put(BookEntry.COLUMN_BOOK_SUPPLIER, BookEntry.AMAZON);
-        values.put(BookEntry.COLUMN_SUPPLIER_PHONE_NUMBER, "+30198754467");
-
+        values.put(BookEntry.COLUMN_SUPPLIER_PHONE_NUMBER, "30198754467");
 
         // Insert a new row for The Little Prince into the provider using the ContentResolver.
         // Receive the new content URI that will allow us to access the book's data in the future.
@@ -142,9 +141,9 @@ public class CatalogActivity extends AppCompatActivity implements
                 BookEntry._ID,
                 BookEntry.COLUMN_BOOK_TITLE,
                 BookEntry.COLUMN_BOOK_AUTHOR,
+                BookEntry.COLUMN_BOOK_QUANTITY,
                 BookEntry.COLUMN_BOOK_PRICE,
                 BookEntry.COLUMN_BOOK_SUPPLIER,
-                BookEntry.COLUMN_BOOK_QUANTITY,
                 BookEntry.COLUMN_SUPPLIER_PHONE_NUMBER
         };
 

@@ -19,6 +19,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingTop="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/editor_text_color"
             android:text="@string/label_book_info" />
 
         <!-- Book Info Input fields -->
@@ -61,6 +63,8 @@
         android:id="@+id/container_supplier"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
         android:orientation="horizontal">
 
         <!-- Label -->
@@ -68,7 +72,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/editor_text_color"
             android:paddingTop="16dp"
+            android:textSize="16sp"
             android:text="@string/label_supplier" />
 
         <!-- Supplier Input field -->
@@ -88,43 +94,60 @@
         </LinearLayout>
     </LinearLayout>
 
-    <RelativeLayout
+    <!-- Quantity field -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginLeft="110dp">
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/add_quantity"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_toRightOf="@id/edit_book_quantity"
-            android:text="@string/add_button" />
-
-        <!-- Quantity field -->
-        <EditText
-            android:id="@+id/edit_book_quantity"
-            android:layout_width="80dp"
-            android:layout_marginRight="10dp"
-            android:layout_centerHorizontal="true"
+        <TextView
+            android:id="@+id/quantity_field"
+            android:textSize="16sp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="@string/hint_book_quantity"
-            android:inputType="number" />
+            android:textColor="@color/editor_text_color"
+            android:layout_weight="1"
+            android:paddingTop="16dp"
+            android:text="@string/label_quantity" />
 
-        <Button
-            android:id="@+id/subtract_quantity"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:text="@string/subtract_button" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
 
-    </RelativeLayout>
+            <Button
+                android:id="@+id/subtract_quantity"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:text="@string/subtract_button" />
+
+            <EditText
+                android:id="@+id/edit_book_quantity"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="@string/hint_book_quantity"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/add_quantity"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_toRightOf="@id/edit_book_quantity"
+                android:text="@string/add_button" />
+        </LinearLayout>
+    </LinearLayout>
 
     <!-- Supplier category -->
     <LinearLayout
         android:id="@+id/container_supplier_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
         android:orientation="horizontal">
 
         <!-- Label -->
@@ -132,7 +155,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/editor_text_color"
             android:paddingTop="1dp"
+            android:textSize="16sp"
             android:text="@string/label_supplier_phone_number" />
 
         <!-- Input fields -->
@@ -153,4 +178,21 @@
 
         </LinearLayout>
     </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/call_supplier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="18dp"
+            android:text="@string/call_supplier"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="45dp"
+            android:textSize="18sp"
+            android:background="@color/button_color"/>
+
+    </RelativeLayout>
 </LinearLayout>

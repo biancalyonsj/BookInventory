@@ -140,16 +140,16 @@ public class BookProvider extends ContentProvider {
             throw new IllegalArgumentException("Book requires an author");
         }
 
-        // Checks that the price is not null
-        float price = values.getAsFloat(BookEntry.COLUMN_BOOK_PRICE);
-        if (price < 0) {
-            throw new IllegalArgumentException("Book requires a price");
+        // Checks that the price is greater than or equal to zero
+        Integer price = values.getAsInteger(BookEntry.COLUMN_BOOK_PRICE);
+        if (price != null && price < 0) {
+            throw new IllegalArgumentException("Book requires a valid price");
         }
 
-        // Checks that the quantity is not null
-        int quantity = values.getAsInteger(BookEntry.COLUMN_BOOK_QUANTITY);
-        if (quantity < 0) {
-            throw new IllegalArgumentException("Book requires a quantity");
+        // Checks that the quantity is greater than zero
+        Integer quantity = values.getAsInteger(BookEntry.COLUMN_BOOK_QUANTITY);
+        if (quantity != null && quantity < 0) {
+            throw new IllegalArgumentException("Book requires a valid quantity");
         }
 
         // Checks that the supplier is valid
@@ -157,6 +157,12 @@ public class BookProvider extends ContentProvider {
         if (supplier == null || !BookEntry.isValidSupplier(supplier)) {
             throw new IllegalArgumentException("Book requires a supplier");
 
+        }
+
+        // Checks that the user enters a phone number
+        Integer supplierPhoneNumber = values.getAsInteger(BookEntry.COLUMN_SUPPLIER_PHONE_NUMBER);
+        if (supplierPhoneNumber != null && supplierPhoneNumber < 0) {
+            throw new IllegalArgumentException("Book requires a supplier's phone number");
         }
 
         // Get writeable database
@@ -223,19 +229,27 @@ public class BookProvider extends ContentProvider {
             }
         }
 
-        // Checks that the price value is not null
+        // Checks that the price value is greater than or equal to zero
         if (values.containsKey(BookEntry.COLUMN_BOOK_PRICE)) {
-            float price = values.getAsFloat(BookEntry.COLUMN_BOOK_PRICE);
-            if (price == 0) {
-                throw new IllegalArgumentException("Book requires a price");
+            Integer price = values.getAsInteger(BookEntry.COLUMN_BOOK_PRICE);
+            if (price != null && price < 0) {
+                throw new IllegalArgumentException("Book requires a valid price");
             }
         }
 
-        // Checks that the quantity value is not null
+        // Checks that the phone number is not null
+        if (values.containsKey(BookEntry.COLUMN_SUPPLIER_PHONE_NUMBER)) {
+            Integer supplierPhoneNumber = values.getAsInteger(BookEntry.COLUMN_SUPPLIER_PHONE_NUMBER);
+            if (supplierPhoneNumber != null && supplierPhoneNumber < 0) {
+                throw new IllegalArgumentException("Book requires a supplier's phone number");
+            }
+        }
+
+        // Checks that the quantity value is greater than or equal to zero
         if (values.containsKey(BookEntry.COLUMN_BOOK_QUANTITY)) {
-            int quantity = values.getAsInteger(BookEntry.COLUMN_BOOK_QUANTITY);
-            if (quantity > 0) {
-                throw new IllegalArgumentException("Book requires a quantity");
+            Integer quantity = values.getAsInteger(BookEntry.COLUMN_BOOK_QUANTITY);
+            if (quantity != null && quantity < 0) {
+                throw new IllegalArgumentException("Book requires a valid quantity");
             }
         }
 
@@ -246,6 +260,8 @@ public class BookProvider extends ContentProvider {
                 throw new IllegalArgumentException("Book requires valid supplier");
             }
         }
+
+
 
         // If there are no values to update, then don't try to update the database
         if (values.size() == 0) {
