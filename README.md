@@ -34,5 +34,6 @@ Core Concepts I learned Completing this Project:
 -	Creating intents to other apps using stored information 
 -	Creating interactivity through button clicks and Java code.
 
-<img src="GoodNightNews\MainPage.png" width="350" height="620"> <img src="GoodNightNews\SettingsActivity.png" width="350" height="620">
-<img src="GoodNightNews\SettingsOptions.png" width="350" height="620"> 
+<img src="BookInventory/EmptyActivity.png" width="350" height="620"> <img src="BookInventory/AddBook.png" width="350" height="620">
+<img src="BookInventory/ListItem.png" width="350" height="620"> <img src="BookInventory/EditBook.png" width="350" height="620">
+<img src="BookInventory/ExitPrompt.png" width="350" height="620">
