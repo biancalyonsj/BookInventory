@@ -36,4 +36,4 @@ Core Concepts I learned Completing this Project:
 
 <img src="BookInventory/EmptyActivity.png" width="350" height="620"> <img src="BookInventory/AddBook.png" width="350" height="620">
 <img src="BookInventory/ListItem.png" width="350" height="620"> <img src="BookInventory/EditBook.png" width="350" height="620">
-<img src="BookInventory/ExitPrompt.png" width="350" height="620">
+<img src="BookInventory/BookSuppliers.png" width="350" height="620"> <img src="BookInventory/ExitPrompt.png" width="350" height="620">
